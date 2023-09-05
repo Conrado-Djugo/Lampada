@@ -1,0 +1,28 @@
+*{
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+header, main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body{
+    background: url(./Img/fundo-tijolos.jpg) no-repeat top center/cover;
+}
+
+h1{
+    color: white;
+}
+#lamp{
+    width: 450px;
+}
+button{
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: 800;
+
+}
