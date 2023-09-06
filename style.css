@@ -8,15 +8,12 @@ header{
     margin-bottom: 20px;
 }
 
- main{
+main{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    height: 100%;
- 
-    
+    height: 100%;  
 }
 
 body{
@@ -31,16 +28,17 @@ h1{
     color: white;
     margin-top: 50px;
 }
+
 #lamp{
     width: 350px;
     margin-top: -30px;
 }
+
 .button{
     margin-top: 40px;
     display: flex;
     gap: 25px;
-    justify-content: center;
-   
+    justify-content: center; 
 }
 
 button{
@@ -59,14 +57,30 @@ footer{
 
 @media(max-width: 700px){
     button{
-        width: 90px;
-        font-size: 18px;
+    width: 90px;
+    font-size: 18px;
                 
     }
 }
+
 @media(max-width: 700px){
     .button{
     display: flex;
     gap: 10px;     
+    
+    }
+}
+
+@media(max-width: 700px){
+    body{
+    background: url(./img/fundo-tijolos-mobile.png)no-repeat top center/cover;
+    
+    }
+}
+
+@media(max-width: 700px){
+    header{
+    margin-top: 2rem;
+
     }
 }
