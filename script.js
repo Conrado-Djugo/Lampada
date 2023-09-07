@@ -1,55 +1,35 @@
-const OnOff = document.getElementById('OnOff')
-const RestoreBroken = document.getElementById('RestoreBroken')
-const lamp = document.getElementById('lamp')
-
-let stop = false; 
+const meuBotao = document.querySelector(".switchButton");
+const lamp = document.getElementById("lamp");
+const boxone =document.querySelector(".restore")
+const buttonOnOff = document.getElementById('buttonOne')
+const restoreLamp = document.getElementById('restore')
+let lampQuebrada = false;
 
 function isLampBroken(){
-    return lamp.src.indexOf ( 'quebrada' ) > -1
+    return lampQuebrada
 }
 
-function ligada() {
-    if (!isLampBroken()){
-        lamp.src = './img/ligada.png';
-        
-    }
-    
-}
-function restore() {
-    lamp.src = './img/desligada.png';
-}
-
-function quebrada() {
+lamp.addEventListener('dblclick',function quebrada() {   
     lamp.src = './img/quebrada.png';
+    boxone.classList.remove("one");
+    lampQuebrada = true;
+})
+
+function ligaDesliga (){
+    if(!isLampBroken ()){
+         if (meuBotao.classList.contains("ativo")) {
+            meuBotao.classList.remove("ativo");
+            lamp.src = './img/desligada.png'; 
+        } else {
+            meuBotao.classList.add("ativo");
+            lamp.src = './img/ligada.png';
+}}}
+
+function restaurar(){
+    lamp.src = './img/desligada.png';
+    lampQuebrada = false;
+    boxone.classList.add("one")
 }
 
-function ligarDesligar(){
-    if(stop){
-        return
-    }
-    if(OnOff.textContent == 'Ligar'){
-        ligada();   
-        OnOff.textContent = 'Desligar'
-    }else{
-        restore();
-        OnOff.textContent = 'Ligar'
-    }
-}
-
-function RestaurarQuebrar(){
-    if (RestoreBroken.textContent == 'Quebrar') {
-        quebrada();  // Chama a função quebrada() quando o texto é 'Quebrar'
-        RestoreBroken.textContent = 'Restaurar';
-        stop = true;
-    } else {
-        restore();  // Chama a função restore() quando o texto não é 'Quebrar'
-        RestoreBroken.textContent = 'Quebrar';
-        stop = false;
-    }
-}
-
-
- 
-OnOff.addEventListener('click', ligarDesligar)
-RestoreBroken.addEventListener('click', RestaurarQuebrar)
-
+buttonOne.addEventListener("click", ligaDesliga);
+restoreLamp.addEventListener("click", restaurar);
