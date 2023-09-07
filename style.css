@@ -44,7 +44,6 @@ h1{
 #switch button{
     width: 32px;
     height: 32px;
-    
     border: 0;
     border-radius: 50%;
     position: absolute;
@@ -70,7 +69,6 @@ h1{
     
  }
 #restore{
-  
    margin-top: 2rem;
    width: 75px;
    height: 35px;
@@ -84,22 +82,12 @@ h1{
 footer{
     margin-top: -20px;
     font-size: 8px;
+   
 }
 
-@media(max-width: 700px){
-    button{
-    width: 90px;
-    font-size: 18px;
-                
-    }
-}
-
-@media(max-width: 700px){
-    .button{
-    display: flex;
-    gap: 10px;     
-    
-    }
+.restore{
+    box-sizing: border-box;
+    width: 92px;
 }
 
 @media(max-width: 700px){
