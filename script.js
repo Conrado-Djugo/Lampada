@@ -9,11 +9,13 @@ function isLampBroken(){
     return lampQuebrada
 }
 
-lamp.addEventListener('dblclick',function quebrada() {   
+
+
+function quebrada() {   
     lamp.src = './img/quebrada.png';
     boxone.classList.remove("one");
     lampQuebrada = true;
-})
+} 
 
 function ligaDesliga (){
     if(!isLampBroken ()){
@@ -28,8 +30,10 @@ function ligaDesliga (){
 function restaurar(){
     lamp.src = './img/desligada.png';
     lampQuebrada = false;
-    boxone.classList.add("one")
+    boxone.classList.add("one");
+    meuBotao.classList.remove("ativo");
 }
-
+    
+lamp.addEventListener('dblclick',quebrada)
 buttonOne.addEventListener("click", ligaDesliga);
 restoreLamp.addEventListener("click", restaurar);
